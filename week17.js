@@ -5,10 +5,10 @@
 //Ваш код
 /*
 //Создаём объекта на основе класса Worker
-const worker = new Worker('Имя', 'Фамилия');
+/*const worker = new Worker('Имя', 'Фамилия');*/
 //Выводим созданный объект в консоль
-console.log(worker);
-class Worker {// Выводит объект Worker {name: "Имя", surname: "Фамилия"}
+/*console.log(worker);*/
+/*class Worker {// Выводит объект Worker {name: "Имя", surname: "Фамилия"}
 	constructor(name, surname) {
 	this.name = name; // свойство name
 	this.surname = surname; // свойство surname
@@ -17,7 +17,6 @@ class Worker {// Выводит объект Worker {name: "Имя", surname: "�
 	
 	const worker = new Worker('Имя', 'Фамилия'); // создание объекта worker
 	console.log(worker); // вывод объекта worker в консоль
-
 	
 
 //Задание 2
@@ -160,17 +159,18 @@ class Student {
 constructor(name, age, grade) {
 	this.name = name;
 	this.age = age;
-	this.grade = grade;
+	this.grade += 1;
 	}
 }
 
 Student.prototype.increaseGrade = function increaseGrade(){
-	return this.grade+1;
+	this.grade += 1;
 }
+
 const student2 = new Student('Alex', 22, 4);
 console.log(`Повышенная оценка студента ${student2.name} составила -  ${student2.increaseGrade()}`);
 
-
+/*
 //Задание 11
 //Создайте класс Book. Класс должен содержать свойства title, author и year. Создайте на его основе объект book и выведите его свойства в консоль.
 
@@ -247,7 +247,8 @@ class BankAccount { // Создаем класс BankAccount
 
 	withdraw(amount) {
 		if (amount <= this.balance) {
-			return this.balance-amount;//Уменьшите баланс на заданную сумму
+			this.balance -= amount; // Уменьшаем баланс на заданную сумму
+			return this.balance;
 		} else {
 			console.log('Недостаточно средств');//Выводите в консоль сообщение
 		}
@@ -356,6 +357,7 @@ class Calculator {
         }
     }
 }
+
  // Создание объекта calculator на основе класса Calculator
 const calculator = new Calculator(5, 2);
 // Вызов каждого из методов и вывод результатов в консоль
